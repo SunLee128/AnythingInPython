@@ -87,7 +87,7 @@ def display_info(a, b, *args, instructor="Sun", **kwargs):
     return [a, b, args, instructor, kwargs]
 
 
-display_info(1, 2, 3, last_name="Lee, job="Developer")
+display_info(1, 2, 3, last_name="Lee", job="Developer")
 
 [1, 2, (3,), 'Sun', {'job': 'Developer', 'last_name': 'Lee'}]
 
@@ -122,7 +122,6 @@ display_names(**names) "Sun says hello to Tom"
 
 
 def first_lambda(x): return x + 5
-
 
 first_lambda(10)  # 15
 
