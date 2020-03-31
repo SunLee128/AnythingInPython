@@ -92,20 +92,23 @@ display_info(1, 2, 3, last_name="Lee", job="Developer")
 [1, 2, (3,), 'Sun', {'job': 'Developer', 'last_name': 'Lee'}]
 
 # using * as an Argument - Argument Unpacking
+# A special operator we can pass to functions
+# Gathers remaining arguments as a tuple
 
 
 def sum_all_values(*args):
-    # there's a built in sum function - we'll see more later!
     return sum(args)
 
 
-sum_all_values([1, 2, 3, 4])  # nope...
-sum_all_values((1, 2, 3, 4))  # this does not work either...
+# sum_all_values([1, 2, 3, 4])  # nope...
+# sum_all_values((1, 2, 3, 4))  # this does not work either...
 
 sum_all_values(*[1, 2, 3, 4])  # 10
 sum_all_values(*(1, 2, 3, 4))  # 10
 
 # using ** as an Argument - Dictionary Unpacking
+# A special operator we can pass to functions
+# Gathers remaining keyword arguments as a dictionary
 
 
 def display_names(first, second):
@@ -114,14 +117,15 @@ def display_names(first, second):
 
 names = {"first": "Sun", "second": "Tom"}
 
-display_names(names)  # nope..
+# display_names(names)  # nope..
 
-display_names(**names) "Sun says hello to Tom"
+display_names(**names)  # "Sun says hello to Tom"
 
 # Lambdas - anonymous functions
 
 
 def first_lambda(x): return x + 5
+
 
 first_lambda(10)  # 15
 
@@ -137,3 +141,21 @@ def multiply_values(x, y): return x + y
 add_values(10, 20)  # 30
 
 multiply_values(10, 20)  # 200
+
+# map
+
+
+def decrement_list(l):
+    return list(map(lambda n: n-1, l))
+
+
+print(decrement_list([1, 2, 3]))  # 0,1,2
+
+# filter
+
+
+def remove_negatives(nums):
+    return list(filter(lambda l: l >= 0, nums))
+
+
+print(remove_negatives([-1, -3, 4, 5, 77]))  # [4,5,77]
